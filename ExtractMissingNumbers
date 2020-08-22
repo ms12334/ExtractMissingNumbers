@@ -1,0 +1,21 @@
+Option Explicit
+Private Sub ExtractMissingNum_Click()
+    Dim start_num As Long, end_num As Long, count As Long, i As Long, j As Long
+    
+    start_num = InputBox("Enter the start number.")
+    end_num = InputBox("Enter the end number.")
+    
+    i = 1
+    j = 1
+    
+    For count = start_num To end_num
+        If Cells(i, 1) = count Then
+            i = i + 1
+        Else
+            Cells(j, 2).Value = count
+            j = j + 1
+        End If
+    Next count
+    
+    MsgBox "Done!"
+End Sub
